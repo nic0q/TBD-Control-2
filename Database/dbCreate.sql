@@ -1,8 +1,8 @@
 -------------------------------------------------------
--- Crear DeliveryDB
--- Database: DeliveryDB
+-- Crear VoluntariadoDB
+-- Database: VoluntariadoDB
 
--- DROP DATABASE IF EXISTS "VoluntariadoDB";
+DROP DATABASE IF EXISTS "VoluntariadoDB";
 
 CREATE DATABASE "VoluntariadoDB"
     WITH
@@ -14,7 +14,7 @@ CREATE DATABASE "VoluntariadoDB"
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 -------------------------------------------------------
---Table "Voluntario"
+--Table "Voluntary"
 -------------------------------------------------------
 CREATE TABLE IF NOT EXISTS "Voluntary" (
   "id_voluntary" SERIAL,
@@ -23,4 +23,3 @@ CREATE TABLE IF NOT EXISTS "Voluntary" (
   "health" INT NOT NULL, 
   "avalaible" boolean NOT NULL,
   PRIMARY KEY ("id_voluntary"));
--- Hist
