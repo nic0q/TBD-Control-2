@@ -67,4 +67,16 @@ public class Voluntary {
     public void trueAvalaible(){
         this.avalaible = true;
     }
+
+    @Override
+    public String toString() {
+        return "Voluntary{" +
+                "id_voluntary=" + id_voluntary +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", inventory='" + inventory + '\'' +
+                ", health=" + health +
+                ", avalaible=" + avalaible +
+                '}';
+    }
 }

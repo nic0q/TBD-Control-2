@@ -12,7 +12,6 @@ import java.util.List;
 public class VoluntaryRepositoryImp implements VoluntaryRepository{
   @Autowired
     private Sql2o sql2o;
-
     @Override
     public int countVoluntary() {
         int total = 0;
@@ -21,7 +20,6 @@ public class VoluntaryRepositoryImp implements VoluntaryRepository{
         }
         return total;
     }
-    
     @Override
     public List<Voluntary> getAllVoluntaries() {
         try(Connection conn = sql2o.open()){
@@ -61,15 +59,15 @@ public class VoluntaryRepositoryImp implements VoluntaryRepository{
         }
     }
     @Override
-    public boolean editVoluntary(int id, Voluntary voluntary) {
+    public boolean editVoluntary(Voluntary voluntary) {
         try(Connection conn = sql2o.open()){
-                conn.createQuery("UPDATE \"Voluntary\" SET name = :voluntaryName, age = :voluntaryAge, inventory = :voluntaryInventory, health = :voluntaryHealth, avalaible = :voluntaryAvalaible WHERE id = :voluntaryId")
+                conn.createQuery("UPDATE \"Voluntary\" SET name = :voluntaryName, age = :voluntaryAge, inventory = :voluntaryInventory, health = :voluntaryHealth, avalaible = :voluntaryAvalaible WHERE id_voluntary = :voluntaryId")
                         .addParameter("voluntaryName", voluntary.getName())
                         .addParameter("voluntaryAge", voluntary.getAge())
                         .addParameter("voluntaryInventory", voluntary.getInventory())
-                        .addParameter("voluaible", voluntary.getAvalaible())
+                        .addParameter("voluntaryAvalaible", voluntary.getAvalaible())
                         .addParameter("voluntaryHealth", voluntary.getHealth())
-                        .addParameter("voluntaryAvalaible", voluntary.getId())
+                        .addParameter("voluntaryId", voluntary.getId())
                         .executeUpdate();
                 return true;
             }catch(Exception e){
@@ -77,18 +75,14 @@ public class VoluntaryRepositoryImp implements VoluntaryRepository{
                 return false;
             }
     }
-
     @Override
     public boolean deleteVoluntary(int id) {
         int deletedVoluntary;
         try(Connection conn = sql2o.open()){
-            deletedVoluntary = conn.createQuery("DELETE FROM \"Voluntary\" WHERE id = :id")
+            deletedVoluntary = conn.createQuery("DELETE FROM \"Voluntary\" WHERE id_voluntary = :id")
                     .addParameter("id", id)
                     .executeUpdate().getResult();
         }
         return deletedVoluntary == 1;
     }
-
-
-
 }

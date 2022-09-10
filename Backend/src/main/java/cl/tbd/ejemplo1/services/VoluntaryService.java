@@ -48,8 +48,14 @@ public class VoluntaryService {
 
     @PutMapping("/voluntaries/{id}")
     @ResponseBody
-    public void editVoluntary(@PathVariable("id") int id, @RequestBody Voluntary voluntary){
-        voluntaryRepository.editVoluntary(id, voluntary);
+    public String editVoluntary(@PathVariable("id") int id, @RequestBody Voluntary voluntary){
+        voluntary.setId(id);
+        boolean result = voluntaryRepository.editVoluntary(voluntary);
+        if (result){
+            return "Voluntario editado";
+        }else{
+            return "Voluntario no encontrado";
+        }
     }
     @DeleteMapping("/voluntaries/{id}")
     @ResponseBody

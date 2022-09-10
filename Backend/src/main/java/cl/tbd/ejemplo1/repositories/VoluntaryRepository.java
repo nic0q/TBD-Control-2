@@ -14,5 +14,5 @@ public interface VoluntaryRepository {
 
   public boolean deleteVoluntary(int id);
 
-  public boolean editVoluntary(int id, Voluntary voluntary);
+  public boolean editVoluntary(Voluntary voluntary);
 }
