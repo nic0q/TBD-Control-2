@@ -4,10 +4,12 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  axios:{
+    baseURL: 'http://localhost:8084'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'control_2',
+    title: 'frontend',
     htmlAttrs: {
       lang: 'en'
     },
@@ -38,8 +40,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: ['bootstrap-vue/nuxt','@nuxtjs/axios'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
