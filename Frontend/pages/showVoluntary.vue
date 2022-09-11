@@ -47,49 +47,51 @@
         <div class="card-body p-sm-5">
           <h2 class="text-center mb-4">Editar voluntario </h2>
           <form method="post">
-            <select class="edit-forms my-2 dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" v-model="id">
-              <option v-for="(item, index) in items" :key="index" >
-                {{ item.id }}
-              </option>
-            </select>
+             <div class="edit-forms my-2"></div>
+              <label for= "id" class="control-label">Seleccionar ID: </label>
+              <select id="id" class="edit-forms my-2 dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" v-model="id">
+                <option v-for="(item, index) in items" :key="index" >
+                  {{ item.id }}
+                </option>
+              </select>
             <div class="edit-forms my-2">
+              <label for="name" class="control-label">Nombre</label>
               <input
                 id="name"
                 v-model="formData.name"
                 class="form-control"
                 type="text"
                 name="nombre"
-                placeholder="Nombre"
               />
             </div>
             <div class="edit-forms my-2">
+              <label for="edad" class="control-label">Edad</label>
               <input
                 id="edad"
                 class="form-control"
                 v-model="formData.age"
                 type="text"
                 name="edad"
-                placeholder="Edad"
               />
             </div>
             <div class="edit-forms my-2">
+              <label for="salud" class="control-label">Salud</label>
               <input
                 id="salud"
                 class="form-control"
                 v-model="formData.health"
                 name="salud"
                 rows="1"
-                placeholder="Salud"
               />
             </div>
             <div class="edit-forms my-2">
+              <label for="equipamiento" class="control-label">Equipamiento</label>
               <input
                 id="equipamiento"
                 v-model="formData.inventory"
                 class="form-control"
                 type="tex"
                 name="equipamiento"
-                placeholder="Equipamiento a su disposición"
               />
             </div>
             <div>
