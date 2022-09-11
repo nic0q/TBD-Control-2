@@ -66,13 +66,6 @@ export default {
         console.log("error", error);
       }
     },
-    editVoluntary: async function () {
-      try {
-        await this.$axios.put(`/voluntaries/${this.id}`, this.formData);
-      } catch (error) {
-        console.log("error", error);
-      }
-    },
     /*
             await this.$axios.post('/voluntaries', {
                 name: this.nombre,
