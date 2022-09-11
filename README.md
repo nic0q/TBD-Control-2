@@ -2,6 +2,8 @@
 Este repositorio contiene todos los archivos relacionados con el Control N°2 del
 laboratorio de Taller de Base de Datos (Base de Datos Avanzadas 13317) desarrollado
 por el equipo 5. 
+
+* **IMPORTANTE: Para poder conectarse correctamente a la Base de Datos, se debe utilizar el usuario "root" y la contraseña "password"**
 ## Integrantes del equipo 5
 * [Vanina Correa](https://github.com/Vanina11)
 * [Nícolas Farfán](https://github.com/nic0q)
