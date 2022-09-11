@@ -19,6 +19,7 @@ CREATE DATABASE "VoluntariadoDB"
 CREATE TABLE IF NOT EXISTS "Voluntary" (
   "id_voluntary" SERIAL,
   "name" VARCHAR(45) NOT NULL,
+  "age" INT NOT NULL,
   "inventory" VARCHAR(45) NOT NULL,
   "health" INT NOT NULL, 
   "avalaible" boolean NOT NULL,
