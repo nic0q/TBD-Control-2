@@ -5,7 +5,7 @@
     <td>{{ age }}</td>
     <td>{{ inventory }}</td>
     <td>{{ health }}</td>
-    <td v-if="{ avalaible }">Disponible</td>
+    <td v-if=" avalaible  === true" >Disponible</td>
     <td v-else>No disponible</td>
     <a href="/showVoluntary" class="btn btn-danger" role="button" aria-pressed="true"
       v-on:click="deleteVoluntary">Borrar</a>
